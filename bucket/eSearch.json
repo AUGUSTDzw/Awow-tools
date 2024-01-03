@@ -1,21 +1,57 @@
 {
-    "autoupdate": {
-        "url": "https://github.com/xushengfeng/eSearch/releases/download/$version/eSearch-$version-win.zip"
+    "version": "1.11.0",
+    "description": "截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 滚动截屏 Screenshot OCR search translate search for picture paste the picture on the screen screen recorder",
+    "homepage": "https://esearch-app.netlify.app/",
+    "license": {
+        "identifier": "GPL-3.0 license",
+        "url": "https://github.com/xushengfeng/eSearch#GPL-3.0-1-ov-file"
     },
-    "bin": "eSearch.exe",
-    "checkver": {
-        "github": "https://github.com/xushengfeng/eSearch"
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/xushengfeng/eSearch/releases/download/1.11.0/eSearch-1.11.0-win32-x64.exe#/dl.7z",
+            "hash": "8b01757d00973ece87439fb435fd20c154d1a469c2727b13c172135c453a8543",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+            ]
+        },
+        "arm64": {
+            "url": "https://github.com/xushengfeng/eSearch/releases/download/1.11.0/eSearch-1.11.0-win32-arm64.exe#/dl.7z",
+            "hash": "1f040eed7ea733ae499e2b0aeb90b836168baa1a2a6e1a3abdc18b1ddc8284b6",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+            ]
+        }
     },
-    "description": "Screenshot OCR, search, translate, search for picture, paste the picture on the screen, screen recorder",
-    "hash": "ef08c6d32dd8e0330afa9529eb6e3d89847af386026af0b483a5c15bab92edde",
-    "homepage": "https://esearch.vercel.app/",
-    "license": "GPL-3.0-or-later",
+    "installer": {
+        "script": [
+            "ensure \"$persist_dir\" | Out-Null",
+            "New-Item \"$env:APPDATA\\eSearch\" -ItemType Junction -Target \"$persist_dir\" | Out-Null"
+        ]
+    },
+    "uninstaller": {
+        "script": "Remove-Item \"$env:APPDATA\\eSearch\" -Recurse -Force -ErrorAction 'SilentlyContinue'"
+    },
     "shortcuts": [
         [
             "eSearch.exe",
             "eSearch"
         ]
     ],
-    "url": "https://github.com/xushengfeng/eSearch/releases/download/1.10.0/eSearch-1.10.0-win.zip",
-    "version": "1.10.0"
+    "checkver": {
+        "url": "https://api.github.com/repos/xushengfeng/eSearch/releases/latest",
+        "jsonpath": "$.assets[*].browser_download_url",
+        "regex": "eSearch-([\\d.]+)-win32-x64\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/xushengfeng/eSearch/releases/download/$version/eSearch-$version-win32-x64.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/xushengfeng/eSearch/releases/download/$version/eSearch-$version-win32-arm64.exe#/dl.7z"
+            }
+        }
+    }
 }
