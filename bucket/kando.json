@@ -1,7 +1,7 @@
 {
 	"homepage": "https://ko-fi.com/post/Kando-1-0-0-released-G2G5Z1DOS",
 	"description": "Audio player which supports music collection playback, lyrics display, format conversion and many other functions.",
-	"license": "GPL-3.0-only",
+	"license": "MIT",
 	"version": "1.1.0",
 	"architecture": {
 		"64bit": {
