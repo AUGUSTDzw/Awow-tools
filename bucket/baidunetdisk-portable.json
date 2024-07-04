@@ -8,7 +8,7 @@
         "url": "https://pan.baidu.com/disk/cmsdata?do=client"
     },
     "description": "BaiduNetdisk Official Client.",
-    "hash": "f48a079db89258ded32891287da4e8c24792bf8f3e8c3553d45508de3ba24b8f",
+    "hash": "62a9aa7770867225a01472c25118a3615526ddc66574f42358443c8207305ce6",
     "homepage": "https://pan.baidu.com",
     "license": {
         "identifier": "Proprietary",
@@ -22,6 +22,6 @@
             "Baidu\\BaiduNetdisk"
         ]
     ],
-    "url": "https://issuepcdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.42.0.5.exe#dl.7z",
-    "version": "7.42.0.5"
+    "url": "https://issuepcdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.43.0.4.exe#dl.7z",
+    "version": "7.43.0.4"
 }
