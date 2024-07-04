@@ -9,7 +9,6 @@
 			"hash": "04a85258ef1d068aa7bbfd2ff661b45f5e13a42d918856a5d7f696e7fc51e9eb"
 		}
 	},
-	"extract_dir": "kando",
 	"shortcuts": [["Kando.exe", "Kando"]],
 	"pre_install": [],
 	"persist": [],
