@@ -1,11 +1,11 @@
 {
     "version": "1.9.7.4",
     "description": "体验极致模拟 Mac OS 系统桌面",
-    "homepage": "https://www.mydockfinder.com",
+    "homepage": "https://github.com/AUGUSTDzw/WinDockBar",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/user-attachments/files/16143522/MyDockFinder1.9.7.4.zip",
+            "url": "https://github.com/AUGUSTDzw/WinDockBar/releases/download/WinDockBar1.9.7.4/WinDockBar1.9.7.4.zip",
             "hash": "e6f3d50ec72f4efa6a8897af12111ed67c4f37aa51340b19e78c837fc4c64e6b",
             "extract_dir": "MyDock",
             "pre_install": [
@@ -36,7 +36,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/user-attachments/files/16143522/MyDockFinder$version.zip"
+                "url": "https://github.com/AUGUSTDzw/WinDockBar/releases/download/WinDockBar$version/WinDockBar$version.zip"
             }
         },
         "hash": {
