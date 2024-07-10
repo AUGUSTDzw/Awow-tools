@@ -1,11 +1,11 @@
 {
-    "version": "1.9.7.4",
+    "version": "1.9.7.5",
     "description": "体验极致模拟 Mac OS 系统桌面",
     "homepage": "https://github.com/AUGUSTDzw/WinDockBar",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AUGUSTDzw/WinDockBar/releases/download/WinDockBar1.9.7.4/WinDockBar1.9.7.4.zip",
+            "url": "https://github.com/AUGUSTDzw/WinDockBar/releases/download/WinDockBar1.9.7.5/WinDockBar1.9.7.5.zip",
             "hash": "d8abd921fdc4579620f818127da3f2c94be0d28f46a590e9528a1c079ec1c44b",
             "pre_install": [
                 "foreach ($f in @('config.ini', 'ico.ini', 'padconfig.xml')) {",
