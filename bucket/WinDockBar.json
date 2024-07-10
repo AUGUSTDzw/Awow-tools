@@ -7,7 +7,6 @@
         "64bit": {
             "url": "https://github.com/AUGUSTDzw/WinDockBar/releases/download/WinDockBar1.9.7.4/WinDockBar1.9.7.4.zip",
             "hash": "d8abd921fdc4579620f818127da3f2c94be0d28f46a590e9528a1c079ec1c44b",
-            "extract_dir": "MyDock",
             "pre_install": [
                 "foreach ($f in @('config.ini', 'ico.ini', 'padconfig.xml')) {",
                 "    if (-not (Test-Path \"$persist_dir\\$f\")) {",
