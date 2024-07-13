@@ -1,6 +1,6 @@
 # scoop-games [![Tests](https://github.com/Calinou/scoop-games/actions/workflows/ci.yml/badge.svg)](https://github.com/Calinou/scoop-games/actions/workflows/ci.yml) [![Excavator](https://github.com/Calinou/scoop-games/actions/workflows/excavator.yml/badge.svg)](https://github.com/Calinou/scoop-games/actions/workflows/excavator.yml) [![Repo size](https://img.shields.io/github/repo-size/Calinou/scoop-games.svg?style=flat-square)](https://github.com/Calinou/scoop-games) [![Mentioned in Awesome Scoop](https://awesome.re/mentioned-badge.svg)](https://github.com/ScoopInstaller/Awesome)
 
-A [Scoop](https://scoop.sh/) bucket for open source/freeware games and game-related tools.
+A [Scoop](https://scoop.sh/) bucket for open source/freeware tools for my own use.
 
 ## List of applications in this bucket
 
@@ -18,7 +18,7 @@ scoop bucket add games
 
 Once this is done, you can install any app from this bucket (check the list
 of files in the
-[`bucket/` directory](https://github.com/Calinou/scoop-games/tree/master/bucket)).
+[`bucket/` directory](https://github.com/AUGUSTDzw/Awow-tools/tree/master/bucket)).
 For instance, use the following command:
 
 ```powershell
