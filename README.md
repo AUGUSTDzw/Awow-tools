@@ -1,4 +1,4 @@
-# scoop-games [![Tests](https://github.com/Calinou/scoop-games/actions/workflows/ci.yml/badge.svg)](https://github.com/Calinou/scoop-games/actions/workflows/ci.yml) [![Excavator](https://github.com/Calinou/scoop-games/actions/workflows/excavator.yml/badge.svg)](https://github.com/Calinou/scoop-games/actions/workflows/excavator.yml) [![Repo size](https://img.shields.io/github/repo-size/Calinou/scoop-games.svg?style=flat-square)](https://github.com/Calinou/scoop-games) [![Mentioned in Awesome Scoop](https://awesome.re/mentioned-badge.svg)](https://github.com/ScoopInstaller/Awesome)
+# Awow's tools[![Mentioned in Awesome Scoop](https://awesome.re/mentioned-badge.svg)](https://github.com/ScoopInstaller/Awesome)
 
 A [Scoop](https://scoop.sh/) bucket for open source/freeware tools for my own use.
 
