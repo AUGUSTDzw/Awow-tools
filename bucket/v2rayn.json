@@ -50,7 +50,7 @@
         "config.json",
         "guiNConfig.json",
         "bin\\sing_box",
-        "bin\\xray",
+        "bin\\xray"
     ],
     "checkver": "github",
     "autoupdate": {
