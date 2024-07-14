@@ -48,7 +48,9 @@
     "persist": [
         "user-wininet.json",
         "config.json",
-        "guiNConfig.json"
+        "guiNConfig.json",
+        "bin\\sing_box",
+        "bin\\xray",
     ],
     "checkver": "github",
     "autoupdate": {
