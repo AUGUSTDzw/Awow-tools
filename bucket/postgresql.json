@@ -11,7 +11,7 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://get.enterprisedb.com/postgresql/postgresql-16.3-1-windows-x64-binaries.zip#/dl.zip_",
+            "url": "https://get.enterprisedb.com/postgresql/postgresql-16.3-1-windows-x64-binaries.zip#/dl.zip",
             "hash": "ce9d29cead2f58f7936d1baa708ff991210147e71b464f3e316fa13beb3a5b35"
         }
     },
@@ -45,7 +45,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://get.enterprisedb.com/postgresql/postgresql-$version-1-windows-x64-binaries.zip#/dl.zip_"
+                "url": "https://get.enterprisedb.com/postgresql/postgresql-$version-1-windows-x64-binaries.zip#/dl.zip"
             }
         }
     }
