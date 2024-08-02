@@ -14,14 +14,15 @@
             "hash": "584b10f943d033dc12b0a80f59fdf17d25aa08eacfcbc7ae77cab9dee878fff3"
         }
     },
+    "pre_download": "Assert-Administrator",
     "installer": {
         "script": [
             "$programname = \"Microsoft OneDrive*\"",
-            "$LocalAppData = [Environment]::GetFolderPath(\"LocalApplicationData\")",
-            "$filepath = \"$LocalAppData\\Microsoft\\OneDrive\\OneDrive.exe\"",
+            "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
+            "$filepath = \"$ProgramFiles\\Microsoft OneDrive\\OneDrive.exe\"",
             "if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
             "{",
-            "   &\"$dir\\setup.exe\" /silent /update /restart | Out-Null",
+            "   &\"$dir\\setup.exe\" /silent /update /restart /allusers | Out-Null",
             "   if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
             "   {",
             "       exit 1",
