@@ -1,0 +1,47 @@
+{
+    "version": "24.132.0701.0002",
+    "description": "Microsoft OneDrive. Save your photos and files to OneDrive and access them from any device, anywhere.",
+    "homepage": "https://www.microsoft.com/en-ww/microsoft-365/onedrive/online-cloud-storage",
+    "license": "Proprietary",
+    "changelog": "https://support.microsoft.com/en-us/office/onedrive-release-notes-845dcf18-f921-435e-bf28-4e24b95e5fc0",
+    "architecture": {
+        "64bit": {
+            "url": "https://oneclient.sfx.ms/Win/Installers/24.132.0701.0002/amd64/OneDriveSetup.exe#/setup.exe",
+            "hash": "f9b391b560e5a30c6fc8c0067ae9820f1d10d42fabccc22b3892d4ffebaa87c9"
+        },
+        "arm64": {
+            "url": "https://oneclient.sfx.ms/Win/Installers/24.132.0701.0002/arm64/OneDriveSetup.exe#/setup.exe",
+            "hash": "584b10f943d033dc12b0a80f59fdf17d25aa08eacfcbc7ae77cab9dee878fff3"
+        }
+    },
+    "installer": {
+        "script": [
+            "$programname = \"Microsoft OneDrive*\"",
+            "$LocalAppData = [Environment]::GetFolderPath(\"LocalApplicationData\")",
+            "$filepath = \"$LocalAppData\\Microsoft\\OneDrive\\OneDrive.exe\"",
+            "if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
+            "{",
+            "   &\"$dir\\setup.exe\" /silent /update /restart | Out-Null",
+            "   if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
+            "   {",
+            "       exit 1",
+            "   }",
+            "}",
+            "if (Test-Path -Path \"$dir\\setup.exe\") { Remove-Item \"$dir\\setup.exe\" -Force }"
+        ]
+    },
+    "checkver": {
+        "url": "https://www.majorgeeks.com/files/details/microsoft_skydrive.html",
+        "regex": ".html\">Microsoft OneDrive ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://oneclient.sfx.ms/Win/Installers/$version/amd64/OneDriveSetup.exe#/setup.exe"
+            },
+            "arm64": {
+                "url": "https://oneclient.sfx.ms/Win/Installers/$version/arm64/OneDriveSetup.exe#/setup.exe"
+            }
+        }
+    }
+}
