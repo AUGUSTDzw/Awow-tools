@@ -1,26 +1,21 @@
 {
     "version": "3.4.4-alpha",
     "homepage": "https://github.com/mushan0x0/AI0x0.com",
-    "description": "OCR software, free and offline. (Rapid)",
+    "description": "AI0x0",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://github.com/mushan0x0/AI0x0.com/releases/download/v3.4.4-alpha/AI-0x0_3.4.4-alpha_x64.exe#/dl.7z",
-            "hash": "659c55896c32a5e019dc7bde1713d0e5c73186a2c653bed84c4480fa1795b722",
+            "hash": "1877e2082cfa567314041d9e97bdec2fa84272e44b9f3b31ac5e947d131cbc07"
         }
     },
-       "installer": {
+    "installer": {
         "script": [
             "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
             "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\`$R0\"  -Force -Recurse"
         ]
     },
-    "shortcuts": [
-        [
-            "AI0x0.exe",
-            "AI0x0"
-        ]
-    ],
+    "shortcuts": [["AI0x0.exe", "AI0x0"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
