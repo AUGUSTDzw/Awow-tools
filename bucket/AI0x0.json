@@ -6,10 +6,14 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/mushan0x0/AI0x0.com/releases/download/v3.4.4-alpha/AI-0x0_3.4.4-alpha_x64.exe#/dl.7z",
-            
             "hash": "659c55896c32a5e019dc7bde1713d0e5c73186a2c653bed84c4480fa1795b722",
-            "extract_dir": "AI0x0_v3.4.4-alpha"
         }
+    },
+       "installer": {
+        "script": [
+            "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\`$R0\"  -Force -Recurse"
+        ]
     },
     "shortcuts": [
         [
