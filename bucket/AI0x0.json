@@ -15,7 +15,7 @@
             "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\`$R0\"  -Force -Recurse"
         ]
     },
-    "shortcuts": [["AI0x0.exe", "AI0x0"]],
+    "shortcuts": [["AI 0x0.exe", "AI0x0"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
