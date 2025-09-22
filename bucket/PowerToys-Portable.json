@@ -13,7 +13,14 @@
     "installer": {
         "script": [
             "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
-            "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup-$version-x64.msi\" \"$dir\" -ExtractDir 'PowerToys'",
+            "$xml = [xml](Get-Content -Raw \"$dir\\.tmp\\UX\\manifest.xml\" -Encoding utf8)",
+            "$xml.BurnManifest.Payload | Where-Object { $_.FilePath.EndsWith(\".msi\") } | ForEach-Object {",
+            "    if ($($_.FilePath) -like \"*wix5*.msi\") {",
+            "        Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\$($_.FilePath)\" \"$dir\" -ExtractDir 'LocalApp\\PowerToys'",
+            "    } else {",
+            "        Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\$($_.FilePath)\" \"$dir\" -ExtractDir 'PowerToys'",
+            "    }",
+            "}",
             "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
         ]
     },
@@ -36,3 +43,4 @@
         }
     }
 }
+
