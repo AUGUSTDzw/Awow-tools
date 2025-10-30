@@ -25,7 +25,7 @@
     ],
     "checkver": {
         "url": "https://chatboxai.app/help-center/changelog",
-        "regex": "<h2>v([\d.]+.*)-\s*\d{4}.\d{2}.\d{2}</h2>"
+        "regex": "<h2>v([\\d.]+.*)-\\s*\\d{4}.\\d{2}.\\d{2}</h2>"
     },
     "autoupdate": {
         "architecture": {
@@ -35,4 +35,5 @@
         }
     }
 }
+
 
