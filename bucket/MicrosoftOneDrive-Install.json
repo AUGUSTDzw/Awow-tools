@@ -1,17 +1,17 @@
 {
-    "version": "25.189.0928.0002",
+    "version": "25.194.1005.0003",
     "description": "Microsoft OneDrive. Save your photos and files to OneDrive and access them from any device, anywhere.",
     "homepage": "https://www.microsoft.com/en-ww/microsoft-365/onedrive/online-cloud-storage",
     "license": "Proprietary",
     "changelog": "https://support.microsoft.com/en-us/office/onedrive-release-notes-845dcf18-f921-435e-bf28-4e24b95e5fc0",
     "architecture": {
         "64bit": {
-            "url": "https://oneclient.sfx.ms/Win/Installers/25.189.0928.0002/amd64/OneDriveSetup.exe#/setup.exe",
-            "hash": "33457526f3275e838638342c106e875b987c5968c6fe0f60873f5556b29ca2ca"
+            "url": "https://oneclient.sfx.ms/Win/Installers/25.194.1005.0003/amd64/OneDriveSetup.exe#/setup.exe",
+            "hash": "c822df2bbd8de7c6bda36f2e48d54a65bb3073a863fd65b7f2cc67e93e1bfad9"
         },
         "arm64": {
-            "url": "https://oneclient.sfx.ms/Win/Installers/25.189.0928.0002/arm64/OneDriveSetup.exe#/setup.exe",
-            "hash": "0eb21e099a3645fccc1682e2bce75a7f00ae8fe3ae0249c7ef3c674090f9ddc8"
+            "url": "https://oneclient.sfx.ms/Win/Installers/25.194.1005.0003/arm64/OneDriveSetup.exe#/setup.exe",
+            "hash": "409eabcd6f2fd50ce5caa2fb83bee19e84df0d1347cf1adbd63cd500a9a1b5f2"
         }
     },
     "pre_download": "Assert-Administrator",
