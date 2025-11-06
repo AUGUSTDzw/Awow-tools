@@ -5,7 +5,6 @@
   "license": "Apache License 2.0",
   "url": "https://github.com/DearVa/Everywhere/releases/download/v0.4.4/Everywhere-Windows-x64-v0.4.4.zip",
   "hash": "a8d4bebe0e7e7f0177ab4f128f4b44dc3a9cf645ec4bc2b09409e0dcb8202f55",
-  "pre_install": "if (!(Test-Path \"$persist_dir\\settings.ini\")) { New-Item \"$dir\\settings.ini\" | Out-Null }",
   "bin": "Everywhere.Windows.exe",
   "shortcuts": [
     [
@@ -24,3 +23,4 @@
     "url": "https://github.com/DearVa/Everywhere/releases/download/v$version/Everywhere-Windows-x64-v$version.zip"
   }
 }
+
