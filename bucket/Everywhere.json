@@ -1,26 +1,25 @@
 {
-  "version": "0.4.4",
-  "description": "Everywhere",
-  "homepage": "https://getsharex.com/",
-  "license": "Apache License 2.0",
-  "url": "https://github.com/DearVa/Everywhere/releases/download/v0.4.4/Everywhere-Windows-x64-v0.4.4.zip",
-  "hash": "e58f461902d78c6fca27615d857515f8baf71d3ad4ebcda09f8bce1091a717db",
-  "bin": "Everywhere.Windows.exe",
-  "shortcuts": [
-    [
-      "Everywhere.Windows.exe",
-      "Everywhere"
-    ]
-  ],
-  "persist": [
-    "settings.ini",
-    "Everywhere"
-  ],
-  "checkver": {
-    "github": "https://github.com/DearVa/Everywhere"
-  },
-  "autoupdate": {
-    "url": "https://github.com/DearVa/Everywhere/releases/download/v$version/Everywhere-Windows-x64-v$version.zip"
-  }
+    "version": "0.4.5",
+    "description": "Everywhere",
+    "homepage": "https://getsharex.com/",
+    "license": "Apache License 2.0",
+    "url": "https://github.com/DearVa/Everywhere/releases/download/v0.4.5/Everywhere-Windows-x64-v0.4.5.zip",
+    "hash": "79a8cd48944aebd2c97728b7d2302c73022060be8e8b88543474cd1631ba5741",
+    "bin": "Everywhere.Windows.exe",
+    "shortcuts": [
+        [
+            "Everywhere.Windows.exe",
+            "Everywhere"
+        ]
+    ],
+    "persist": [
+        "settings.ini",
+        "Everywhere"
+    ],
+    "checkver": {
+        "github": "https://github.com/DearVa/Everywhere"
+    },
+    "autoupdate": {
+        "url": "https://github.com/DearVa/Everywhere/releases/download/v$version/Everywhere-Windows-x64-v$version.zip"
+    }
 }
-
