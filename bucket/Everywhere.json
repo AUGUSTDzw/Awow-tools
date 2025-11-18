@@ -1,10 +1,10 @@
 {
-    "version": "0.4.6",
+    "version": "0.4.7",
     "description": "Everywhere",
     "homepage": "https://getsharex.com/",
     "license": "Apache License 2.0",
-    "url": "https://github.com/DearVa/Everywhere/releases/download/v0.4.6/Everywhere-Windows-x64-v0.4.6.zip",
-    "hash": "685ad05981aa7cf6ea55ec91e5793dea00abee8557c5efb8b7fc27d4cdf7657c",
+    "url": "https://github.com/DearVa/Everywhere/releases/download/v0.4.7/Everywhere-Windows-x64-v0.4.7.zip",
+    "hash": "03f1cdc92af484a721c518e79f52f72a933bf71f00899df02e042147a84b01fe",
     "bin": "Everywhere.Windows.exe",
     "shortcuts": [
         [
