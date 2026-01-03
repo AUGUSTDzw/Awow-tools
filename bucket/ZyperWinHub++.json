@@ -1,0 +1,29 @@
+{
+    "version": "1.0",
+    "description": "ZyperWinHub++，一款系统优化集合软件，相当于系统优化小工具箱，帮助您更方便地调教系统",
+    "homepage": "https://github.com/ZyperWave/ZyperWinHub",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ZyperWave/ZyperWinHub/releases/download/v1.0/ZyperWinHub++.zip",
+            "hash": "2e2bcc3115e6115ee54cec80e1575e7eba5a5fbf1175dc237035f10a3451aa7b"
+        }
+    },
+    "shortcuts": [
+        [
+            "ZyperWinHub++.exe",
+            "ZyperWinHub++"
+        ]
+    ],
+
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ZyperWave/ZyperWinHub/releases/download/v$version/ZyperWinHub++.zip"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}
