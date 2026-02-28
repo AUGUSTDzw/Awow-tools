@@ -1,37 +1,49 @@
 {
-    "version": "3.0.0-rc.16",
-    "description": "Watt Toolkit is an open-source, cross-platform multifunctional toolbox for Steam.",
-    "homepage": "https://github.com/BeyondDimension/SteamTools/",
+    "version": "2.8.6",
+    "description": "一个开源跨平台的多功能 Steam 工具箱，它有另一个名字: \"Watt Toolkit\"。A toolbox with lots of Steam tools. Its other name is \"Watt Toolkit\".",
+    "homepage": "https://steampp.net/",
     "license": {
-        "identifier": "GPL-3.0-only",
-        "url": "https://github.com/BeyondDimension/SteamTools/blob/main/LICENSE"
+        "identifier": "GNU General Public License v3.0",
+        "url": "https://github.com/BeyondDimension/SteamTools/blob/develop/LICENSE"
     },
     "architecture": {
         "64bit": {
             "url": "https://github.com/BeyondDimension/SteamTools/releases/download/3.0.0-rc.16/Steam++_v3.0.0-rc.16_win_x64.7z",
-            "hash": "36eb952eec538af7e2c4d5b8d7bed8e9232e7349f054f094221e4486f0dbe893"
+            "hash": "36EB952EEC538AF7E2C4D5B8D7BED8E9232E7349F054F094221E4486F0DBE893"
+        },
+        "32bit": {
+            "url": "https://github.com/BeyondDimension/SteamTools/releases/download/3.0.0-rc.16/Steam++_v3.0.0-rc.16_win_x64.7z",
+            "hash": "80df3e7cbccc7b7a606ab71ba63333ced8e162dd80094b06b87f21398bd2e905"
         }
     },
-    "bin": "Steam++.exe",
     "shortcuts": [
         [
-            "Steam++.exe",
-            "Steam++"
+            "SteamWatt.exe",
+            "SteamWatt"
         ]
     ],
-    "persist": [
-        "AppData",
-        "Cache",
-        "Logs"
+    "pre_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "persist_file -dir @(\"$dir\\AppData\") @(\"$persist_dir\\AppData\")",
+        "handle_app_lnk",
+        "do_some_things"
+    ],
+    "pre_uninstall": [
+        "$bucket = (Get-Content \"$dir\\install.json\" | ConvertFrom-Json).bucket",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "stop_process",
+        "remove_files"
     ],
     "checkver": {
-        "github": "https://github.com/BeyondDimension/SteamTools",
-        "regex": "/releases/tag/([\\d.]+(-alpha|-beta|-rc)?(\\.\\d+)?)"
+        "github": "https://github.com/SteamTools-Team/SteamTools"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/BeyondDimension/SteamTools/releases/download/$version/Steam++_v$version_win_x64.7z"
+                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_v$version_win_x64.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_v$version_win_x86.7z"
             }
         }
     }
