@@ -1,5 +1,5 @@
 {
-    "version": "2.8.6",
+    "version": "3.0.0-rc",
     "description": "一个开源跨平台的多功能 Steam 工具箱，它有另一个名字: \"Watt Toolkit\"。A toolbox with lots of Steam tools. Its other name is \"Watt Toolkit\".",
     "homepage": "https://steampp.net/",
     "license": {
@@ -8,11 +8,11 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/2.8.6/Steam++_win_x64_v2.8.6.7z",
-            "hash": "9c31e5241ebdd9747ec185f7c34c104a6382c8303d739cecb5904e7a2d01ed2a"
+            "url": "https://github.com/BeyondDimension/SteamTools/releases/download/3.0.0-rc.16/Steam++_v3.0.0-rc.16_win_x64.7z",
+            "hash": "36EB952EEC538AF7E2C4D5B8D7BED8E9232E7349F054F094221E4486F0DBE893"
         },
         "32bit": {
-            "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/2.8.6/Steam++_win_x86_v2.8.6.7z",
+            "url": "https://github.com/BeyondDimension/SteamTools/releases/download/3.0.0-rc.16/Steam++_v3.0.0-rc.16_win_x64.7z",
             "hash": "80df3e7cbccc7b7a606ab71ba63333ced8e162dd80094b06b87f21398bd2e905"
         }
     },
@@ -40,10 +40,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_win_x64_v$version.7z"
+                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_v$version_win_x64.7z"
             },
             "32bit": {
-                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_win_x86_v$version.7z"
+                "url": "https://github.com/SteamTools-Team/SteamTools/releases/download/$version/Steam++_v$version_win_x86.7z"
             }
         }
     }
