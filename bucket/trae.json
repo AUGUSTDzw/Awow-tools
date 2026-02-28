@@ -2,17 +2,16 @@
     "version": "2.3.10208",
     "description": "An AI-powered IDE that makes programming more enjoyable and efficient.",
     "homepage": "https://www.trae.ai",
-    "license": "Proprietary",
+    "license": "Freeware",
     "architecture": {
         "64bit": {
             "url": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/2.3.10208/win32/Trae-Setup-x64.exe",
             "hash": "ee91224c68138092a0ba8a1fb28f5b89c3ddbcb2c6b68b177518c6cb3615c674",
-            "extract_dir": "{code_GetDestDir}",
-            "extract_to": "Trae"
+            "extract_dir": "{code_GetDestDir}"
         }
     },
-    "innosetup": true,
     "post_install": [
+        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse",
         "if (!(Test-Path \"$dir\\data\\extensions\") -and (Test-Path \"$env:USERPROFILE\\.trae\\extensions\")) {",
         "    info '[Portable Mode] Copying extensions...'",
         "    Copy-Item \"$env:USERPROFILE\\.trae\\extensions\" \"$dir\\data\" -Recurse",
@@ -24,14 +23,20 @@
         "$extensions_file = \"$dir\\data\\extensions\\extensions.json\"",
         "if ((Test-Path \"$extensions_file\")) {",
         "    info 'Adjusting path in extensions file...'",
-        "    (Get-Content \"$extensions_file\") -replace '(?<=trae(/|\\\\\\\\)).*?(?=(/|\\\\\\\\)data(/|\\\\\\\\)extensions)', $version | Set-Content \"$extensions_file\"",
+        "    (Get-Content \"$extensions_file\") -replace '(?<=trae-code(/|\\\\\\\\)).*?(?=(/|\\\\\\\\)data(/|\\\\\\\\)extensions)', $version | Set-Content \"$extensions_file\"",
         "}"
     ],
-    "bin": "Trae/bin/trae.cmd",
+    "bin": [
+        [
+            "bin/trae.cmd",
+            "",
+            "--user-data-dir=\"$dir\\data\\user-data\" --extensions-dir=\"$dir\\data\\extensions\""
+        ]
+    ],
     "shortcuts": [
         [
-            "Trae/Trae.exe",
-            "Trae",
+            "Trae.exe",
+            "Trae AI Editor",
             "--user-data-dir=\"$dir\\data\\user-data\" --extensions-dir=\"$dir\\data\\extensions\""
         ]
     ],
@@ -46,5 +51,6 @@
                 "url": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/$version/win32/Trae-Setup-x64.exe"
             }
         }
-    }
+    },
+    "innosetup": true
 }
