@@ -27,7 +27,7 @@
     "script": [
       "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
       "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
-      "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
+      "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'setup'",
       "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
     ]
   },
@@ -40,5 +40,6 @@
         }
     }
 }
+
 
 
