@@ -25,18 +25,10 @@
     ],
   "installer": {
     "script": [
-      "$programname = \"PowerToys*\"",
-      "$AppData = [Environment]::GetFolderPath(\"LocalApplicationData\")",
-      "$filepath = \"$AppData\\PowerToys\\PowerToys.exe\"",
-      "if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
-      "{",
-      "   &\"$dir\\setup.exe\" /silent /norestart | Out-Null",
-      "   if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
-      "   {",
-      "       exit 1",
-      "   }",
-      "}",
-      "if (Test-Path -Path \"$dir\\setup.exe\") { Remove-Item \"$dir\\setup.exe\" -Force }"
+      "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
+      "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
+      "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
+      "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
     ]
   },
     "checkver": "github",
@@ -48,4 +40,5 @@
         }
     }
 }
+
 
