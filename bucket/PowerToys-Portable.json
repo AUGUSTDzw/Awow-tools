@@ -1,73 +1,49 @@
 {
     "version": "0.97.2",
-    "description": "A set of utilities for power users to tune and streamline their Windows experience for greater productivity.",
+    "description": "PowerToys. A set of utilities for power users to tune and streamline their Windows experience for greater productivity.",
     "homepage": "https://github.com/microsoft/PowerToys",
     "license": "MIT",
+    "changelog": "https://github.com/microsoft/PowerToys/releases/tag/v0.75.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.97.2/PowerToysUserSetup-0.97.2-x64.exe",
-            "hash": "54a39f62334f7481c1bdde8abf4928f2e74f100a049f50c7339dabfd34134c98"
-        },
-        "arm64": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.97.2/PowerToysUserSetup-0.97.2-arm64.exe",
-            "hash": "bb24aee4b0b8ebdc007d04a84843d44008ab585192cf145816f4c07c99251be0"
+            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.97.2/PowerToysSetup-0.97.2-x64.exe#/setup.exe",
+            "hash": "d0316cce8a586ce060390830fd0e3ecc298498159eeaff2472a1bf3d2616a5e4"
         }
     },
-    "installer": {
-        "script": [
-            "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
-            "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysUserSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
-            "Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
-            "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
-        ]
-    },
-    "persist": [
-        [
-            "RunPlugins\\Everything",
-            "Everything-plugin"
-        ]
-    ],
-    "post_install": [
-        "foreach ($f in @('modules\\FileLocksmith', 'modules\\Hosts', 'modules\\MeasureTool', ",
-        "                 'modules\\PowerRename', 'modules\\RegistryPreview', 'modules\\Peek')) {",
-        "    Get-ChildItem -Path \"$dir\\dll\\WinAppSDK\" | ForEach-Object {",
-        "        New-Item -ItemType HardLink -Path \"$dir\\$f\\$($_.Name)\" -Value $_.FullName -ErrorAction SilentlyContinue | Out-Null",
-        "    }",
-        "}",
-        "foreach ($f in @('Settings', 'modules\\Awake', 'modules\\ColorPicker', 'modules\\FancyZones', ",
-        "                 'modules\\FileExplorerPreview', 'modules\\FileLocksmith', 'modules\\Hosts', 'modules\\ImageResizer', ",
-        "                 'modules\\launcher', 'modules\\MeasureTool', 'modules\\MouseUtils\\MouseJumpUI', 'modules\\MouseWithoutBorders', ",
-        "                 'modules\\Peek', 'modules\\PowerAccent', 'modules\\PowerOCR', 'modules\\RegistryPreview')) {",
-        "    Get-ChildItem -Path \"$dir\\dll\\Interop\" | ForEach-Object {",
-        "        New-Item -ItemType HardLink -Path \"$dir\\$f\\$($_.Name)\" -Value $_.FullName -ErrorAction SilentlyContinue | Out-Null",
-        "    }",
-        "    Get-ChildItem -Path \"$dir\\dll\\dotnet\" | ForEach-Object {",
-        "        New-Item -ItemType HardLink -Path \"$dir\\$f\\$($_.Name)\" -Value $_.FullName -ErrorAction SilentlyContinue | Out-Null",
-        "    }",
+    "pre_download": "Assert-Administrator",
+    "pre_install": [
+        "$processname = \"PowerToys\"",
+        "$process = Get-Process $processname -ErrorAction SilentlyContinue",
+        "if ($process) {",
+        "   $process.CloseMainWindow()",
+        "   Start-Sleep -Seconds 5",
+        "   if (!$process.HasExited) {",
+        "       Start-Sleep -Seconds 25",
+        "       $process | Stop-Process -Force",
+        "   }",
         "}"
     ],
-    "shortcuts": [
-        [
-            "PowerToys.exe",
-            "PowerToys"
+    "installer": {
+        "script": [
+            "$programname = \"PowerToys*\"",
+            "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
+            "$filepath = \"$ProgramFiles\\PowerToys\\PowerToys.exe\"",
+            "if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
+            "{",
+            "   &\"$dir\\setup.exe\" /silent /norestart | Out-Null",
+            "   if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
+            "   {",
+            "       exit 1",
+            "   }",
+            "}",
+            "if (Test-Path -Path \"$dir\\setup.exe\") { Remove-Item \"$dir\\setup.exe\" -Force }"
         ]
-    ],
+    },
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/microsoft/PowerToys/releases/download/v$version/PowerToysUserSetup-$version-x64.exe",
-                "hash": {
-                    "url": "https://github.com/microsoft/PowerToys/releases/tag/v$version",
-                    "regex": ">$sha256<"
-                }
-            },
-            "arm64": {
-                "url": "https://github.com/microsoft/PowerToys/releases/download/v$version/PowerToysUserSetup-$version-arm64.exe",
-                "hash": {
-                    "url": "https://github.com/microsoft/PowerToys/releases/tag/v$version",
-                    "regex": ">(?:[a-fA-F0-9]{64})<[\\s\\S]*?>([a-fA-F0-9]{64})<"
-                }
+                "url": "https://github.com/microsoft/PowerToys/releases/download/v$version/PowerToysSetup-$version-x64.exe#/setup.exe"
             }
         }
     }
