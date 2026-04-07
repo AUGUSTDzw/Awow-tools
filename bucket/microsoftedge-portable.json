@@ -1,0 +1,31 @@
+{
+    "homepage": "https://www.microsoft.com/en-us/edge",
+    "description": "The chromium based Microsoft Edge browser",
+    "version": "146.0.3856.97",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/bibicadotnet/microsoft-edge-portable/releases/download/edge-stable-portable-x64_146.0.3856.97_1.15.2/edge-stable-portable-x64_146.0.3856.97_1.15.2.zip",
+            "hash": "ca5a1f665cd4c10ec77fbe7b3cc2cb7b2c8d606d5af1be75f100c132253821a7"
+        }
+    },
+    "installer": {
+        "script": "Expand-7zipArchive -Path \"$dir\\MSEDGE.7z\" -ExtractDir \"Chrome-bin\\$version\" -Removal"
+    },
+    "shortcuts": [
+        [
+            "msedge.exe",
+            "Microsoft Edge"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/bibicadotnet/microsoft-edge-portable/releases"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/bibicadotnet/microsoft-edge-portable/releases/download/edge-stable-portable-x64_$version/edge-stable-portable-x64_$version.zip"
+            }
+        }
+    }
+}
