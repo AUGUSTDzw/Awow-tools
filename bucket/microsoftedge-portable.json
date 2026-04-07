@@ -10,7 +10,7 @@
         }
     },
     "installer": {
-        "script": "Expand-7zipArchive -Path \"$dir\\MSEDGE.7z\" -ExtractDir \"Chrome-bin\\$version\" -Removal"
+        "script": "Expand-7zipArchive -Path \"$dir\" -ExtractDir \"Edge_Portable\\Edge\" -Removal"
     },
     "shortcuts": [
         [
