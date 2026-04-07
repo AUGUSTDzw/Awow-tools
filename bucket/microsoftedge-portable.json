@@ -9,9 +9,10 @@
             "hash": "ca5a1f665cd4c10ec77fbe7b3cc2cb7b2c8d606d5af1be75f100c132253821a7"
         }
     },
+    "bin": "Edge_Portable\\Edge\\msedge.exe",
     "shortcuts": [
         [
-            "Edge_Portable\\Edge\\msedge.exe",
+            "bin",
             "Microsoft Edge"
         ]
     ],
