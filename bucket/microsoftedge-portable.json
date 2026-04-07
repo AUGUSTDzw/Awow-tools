@@ -9,9 +9,7 @@
             "hash": "ca5a1f665cd4c10ec77fbe7b3cc2cb7b2c8d606d5af1be75f100c132253821a7"
         }
     },
-    "installer": {
-        "script": "Expand-7zipArchive -Path \"$dir\" -ExtractDir \"Edge_Portable\\Edge\" -Removal"
-    },
+
     "shortcuts": [
         [
             "msedge.exe",
