@@ -8,7 +8,7 @@
     "bin": "Everywhere.Windows.exe",
     "shortcuts": [
         [
-            "Everywhere.Windows.exe",
+            "Everywhere.exe",
             "Everywhere"
         ]
     ],
