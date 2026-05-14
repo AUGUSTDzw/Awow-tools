@@ -5,7 +5,7 @@
     "license": "Apache License 2.0",
     "url": "https://github.com/DearVa/Everywhere/releases/download/v0.7.7/Everywhere-Windows-x64-v0.7.7.zip",
     "hash": "ce7c711ce4b275f83ff7127d83506cd1b2bf16a598d191b33d8a705aeffae534",
-    "bin": "Everywhere.Windows.exe",
+    "bin": "Everywhere.exe",
     "shortcuts": [
         [
             "Everywhere.exe",
