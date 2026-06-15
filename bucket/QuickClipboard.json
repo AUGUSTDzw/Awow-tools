@@ -1,4 +1,4 @@
-{
+ {
     "version": "0.3.2",
     "description": "QuickClipboard is a cross-platform clipboard enhancement tool (currently supporting Windows and Android), built with Tauri 2 + Rust + React.",
     "homepage": "https://github.com/mosheng1/QuickClipboard",
@@ -21,7 +21,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mosheng1/QuickClipboard/releases/download/v$version/QuickClipboard-$version_portable.exe"
+                "url": "https://github.com/mosheng1/QuickClipboard/releases/download/v$version/QuickClipboard_$version_portable.exe"
             }
         }
     }
