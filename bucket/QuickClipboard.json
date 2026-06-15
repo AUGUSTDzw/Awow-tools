@@ -21,7 +21,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mosheng1/QuickClipboard/releases/download/v$version/QuickClipboard-$version-windows-x86-64.zip"
+                "url": "https://github.com/mosheng1/QuickClipboard/releases/download/v$version/QuickClipboard-$version_portable.exe"
             }
         }
     }
