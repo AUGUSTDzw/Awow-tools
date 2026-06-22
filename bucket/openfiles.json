@@ -5,10 +5,10 @@
     "license": "Freeware",
     "url": "https://github.com/pansysoft/openfiles.desktop/releases/download/3.2026.621/OpenFiles.Setup.3.2026.621.exe",
     "hash": "cba17e7ce302ca16eaee783611635a8d909682e6e29fa4afd587431fd3aabff3",
-    "extract_dir": "OpenFiles.Setup.3.2026.621",
+    "extract_dir": "OpenFiles",
     "shortcuts": [
         [
-            "openfiles.desktop.exe",
+            "openfiles.exe",
             "OpenFiles"
         ]
     ],
@@ -17,6 +17,6 @@
         "github": "https://github.com/pansysoft/openfiles.desktop"
     },
     "autoupdate": {
-        "url": "https://github.com/pansysoft/openfiles.desktop/releases/download/v$version/Chatbox.CE-$version-Setup.exe#/dl.7z"
+        "url": "https://github.com/pansysoft/openfiles.desktop/releases/download/v$version/OpenFiles.Setup.$version#/dl.7z"
     }
 }
