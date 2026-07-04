@@ -5,7 +5,7 @@
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://ghproxy.com/https://github.com/alxnbl/onenote-md-exporter/releases/download/v1.6.0/OneNoteMdExporter.v1.6.0.zip",
+            "url": "https://github.com/alxnbl/onenote-md-exporter/releases/download/v1.6.0/OneNoteMdExporter.v1.6.0.zip",
             "hash": "67d6a3aea84c3602311a606abbf599eb5d0aef36232f1164a25aa2e495974c8f"
         }
     },
@@ -21,7 +21,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://ghproxy.com/https://github.com/alxnbl/onenote-md-exporter/releases/download/v$version/OneNoteMdExporter.v$version.zip"
+                "url": "https://github.com/alxnbl/onenote-md-exporter/releases/download/v$version/OneNoteMdExporter.v$version.zip"
             }
         }
     }
